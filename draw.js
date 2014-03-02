@@ -1,116 +1,141 @@
-var context = document.getElementById('canvas').getContext("2d");
+$(document).ready(function() {
 
-var color90C = "#90C";
-var colorRed = "#f00";
-var colorGreen = "#0f0";
-var colorBlue = "#00f";
-var colorBlack = "#000";
-var colorWhite = "#fff";
+	var context = document.getElementById('canvas').getContext("2d");
 
-var curColor = color90C;
+	var color90C = "#90C";
+	var colorRed = "#f00";
+	var colorGreen = "#0f0";
+	var colorBlue = "#00f";
+	var colorBlack = "#000";
+	var colorWhite = "#fff";
 
-var curTool = "crayon";
+	var curColor = color90C;
 
-var clickX = new Array();
-var clickY = new Array();
-var clickDrag = new Array();
-var clickColor = new Array();
-var clickTool = new Array();
-var paint;
+	var curTool = "crayon";
 
-$('#choose90C').click(function(){
-	curColor = color90C;
-});
+	var clickX = new Array();
+	var clickY = new Array();
+	var clickDrag = new Array();
+	var clickColor = new Array();
+	var clickTool = new Array();
+	var paint;
+	
+	var oCanvas = document.getElementById("canvas");
 
-$('#chooseRed').click(function(){
-	curColor = colorRed;
-});
+	$('#choose90C').click(function(){
+		curColor = color90C;
+	});
 
-$('#chooseGreen').click(function(){
-	curColor = colorGreen;
-});
+	$('#chooseRed').click(function(){
+		curColor = colorRed;
+	});
 
-$('#chooseBlue').click(function(){
-	curColor = colorBlue;
-});
+	$('#chooseGreen').click(function(){
+		curColor = colorGreen;
+	});
 
-$('#chooseBlack').click(function(){
-	curColor = colorBlack;
-});
+	$('#chooseBlue').click(function(){
+		curColor = colorBlue;
+	});
 
-$('#chooseWhite').click(function(){
-	curColor = colorWhite;
-});
+	$('#chooseBlack').click(function(){
+		curColor = colorBlack;
+	});
 
-$('#canvas').mousedown(function(e){
-	var mouseX = e.pageX - this.offsetLeft;
-	var mouseY = e.pageY - this.offsetTop;
+	$('#chooseWhite').click(function(){
+		curColor = colorWhite;
+	});
 
-	paint = true;
-	addClick(mouseX, mouseY);
-	redraw();
-	console.log("PRESSED");
-});
+	$('#send').click(function(){
+		saveCanvas(oCanvas);
+	});
 
-$('#canvas').mousemove(function(e){
-	var mouseX = e.pageX - this.offsetLeft;
-	var mouseY = e.pageY - this.offsetTop;
+	$('#canvas').mousedown(function(e){
+		var mouseX = e.pageX - this.offsetLeft;
+		var mouseY = e.pageY - this.offsetTop;
 
-	if(paint){
-		addClick(mouseX, mouseY, true);
+		paint = true;
+		addClick(mouseX, mouseY);
 		redraw();
-	}
-});
+		console.log("PRESSED");
+	});
 
-$('#canvas').mouseup(function(e){
-	var mouseX = e.pageX - this.offsetLeft;
-	var mouseY = e.pageY - this.offsetTop;
+	$('#canvas').mousemove(function(e){
+		var mouseX = e.pageX - this.offsetLeft;
+		var mouseY = e.pageY - this.offsetTop;
 
-	paint = false;
-});
-
-$('#canvas').mouseleave(function(e){
-	var mouseX = e.pageX - this.offsetLeft;
-	var mouseY = e.pageY - this.offsetTop;
-
-	paint = false;
-});
-
-function addClick(x, y, dragging)
-{
-	clickX.push(x);
-	clickY.push(y);
-	clickDrag.push(dragging);
-	if(curTool == "eraser")
-	{
-		clickColor.push("#fff");
-	} else {
-		clickColor.push(curColor);
-	}
-}
-
-function redraw()
-{
-	context.clearRect(0, 0, context.canvas.width, context.canvas.height);
-
-	//context.strokeStyle = "#90C";
-	context.lineJoin = "round";
-	context.lineWidth = 5;
-
-	for(var i = 0; i < clickX.length; i++)
-	{
-		context.beginPath();
-		if(clickDrag[i] && i)
-		{
-			context.moveTo(clickX[i-1], clickY[i-1]);
-		} else {
-			context.moveTo(clickX[i]-1, clickY[i]);
+		if(paint){
+			addClick(mouseX, mouseY, true);
+			redraw();
 		}
-		context.lineTo(clickX[i], clickY[i]);
-		context.closePath();
-		context.strokeStyle = clickColor[i];
-		context.stroke();
-	}
-}
+	});
 
-var oCanvas = document.getElementByID("canvas");
+	$('#canvas').mouseup(function(e){
+		var mouseX = e.pageX - this.offsetLeft;
+		var mouseY = e.pageY - this.offsetTop;
+
+		paint = false;
+	});
+
+	$('#canvas').mouseleave(function(e){
+		var mouseX = e.pageX - this.offsetLeft;
+		var mouseY = e.pageY - this.offsetTop;
+
+		paint = false;
+	});
+
+	function addClick(x, y, dragging)
+	{
+		clickX.push(x);
+		clickY.push(y);
+		clickDrag.push(dragging);
+		if(curTool == "eraser")
+		{
+			clickColor.push("#fff");
+		} else {
+			clickColor.push(curColor);
+		}
+	}
+
+	function redraw()
+	{
+		context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+
+		//context.strokeStyle = "#90C";
+		context.lineJoin = "round";
+		//context.lineWidth = 5;
+
+		for(var i = 0; i < clickX.length; i++)
+		{
+			context.beginPath();
+			if(clickDrag[i] && i)
+			{
+				context.moveTo(clickX[i-1], clickY[i-1]);
+			} else {
+				context.moveTo(clickX[i]-1, clickY[i]);
+			}
+			context.lineTo(clickX[i], clickY[i]);
+			context.closePath();
+			if(clickColor[i] == colorWhite)
+			{
+				context.lineWidth = 20;
+			} else {
+				context.lineWidth = 5;
+			}
+			context.strokeStyle = clickColor[i];
+			context.stroke();
+		}
+	}
+
+
+	function saveCanvas(pCanvas)
+	{
+		var bRes = false;
+		bRes = Canvas2Image.saveAsJPEG(oCanvas);
+
+		if(!bRes)
+		{
+			alert("Sorry, you cannot download");
+		}
+	}
+});

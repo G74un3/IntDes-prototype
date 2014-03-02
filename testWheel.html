@@ -1,25 +1,46 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Hello World</title>
-		<script type="text/javascript" src="lib/jquery-2.1.0.min.js"></script>
-		<script type="text/javascript" src="lib/base64.js"></script>
-		<script type="text/javascript" src="lib/canvas2image.js"></script>
-		<script type="text/javascript" src="draw.js"></script>
-		<link rel="stylesheet" type="text/css" href="style.css">
-	</head>
-	<body>
+<head>
+	<title>Hello World</title>
+	<script type="text/javascript" src="lib/jquery-2.1.0.min.js"></script>
+	<script type="text/javascript" src="lib/base64.js"></script>
+	<script type="text/javascript" src="lib/canvas2image.js"></script>
+	<script type="text/javascript" src="js/draw.js"></script>
+	<script type="text/javascript" src="js/bubble.js"></script>
 
-		<button id="choose90C" type="button">Purple</button>
-		<button id="chooseRed" type="button">Red</button>
-		<button id="chooseGreen" type="button">Green</button>
-		<button id="chooseBlue" type="button">Blue</button>
-		<button id="chooseBlack" type="button">Black</button>
-		<button id="chooseWhite" type="button">White</button>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 
-		<canvas id="canvas" width="300" height="500"></canvas>
+</head>
+<body>
 
-		<button id="send" type="button">SEND</button>
+<!-- 	<button id="choose90C" type="button">Purple</button>
+	<button id="chooseRed" type="button">Red</button>
+	<button id="chooseGreen" type="button">Green</button>
+	<button id="chooseBlue" type="button">Blue</button>
+	<button id="chooseBlack" type="button">Black</button>
+	<button id="chooseWhite" type="button">White</button>
+-->
+<canvas id="canvas" width="300" height="500"></canvas>
 
-	</body>
+
+<div class="bubblewrapper">
+	<div class="colorbubble">
+		<img class="trigger" src="images/pb-rainbow.png" height="80" width="80"/>
+		<div class="popup">
+			<img class="bucket" id="chooseBlue" src="images/pb-blue.png" width="50" height="50">
+			<img class="bucket" id="chooseGreen" src="images/pb-green.png" width="50" height="50">
+			<img class="bucket" id="chooseRed" src="images/pb-red.png" width="50" height="50">
+			<img class="bucket" id="chooseBlack" src="images/pb-black.png" width="50" height="50">
+			<img class="bucket" id="choose90C" src="images/pb-purple.png" width="50" height="50">
+			<img class="bucket" id="chooseWhite" src="images/eraser.png" width="50" height="50">
+			
+		</div>
+	</div>
+</div>
+
+<button id="send" type="button">SEND</button>
+
+
+
+</body>
 </html>

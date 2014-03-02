@@ -3,7 +3,7 @@
 $(function () {
   $('.colorbubble').each(function () {
     // options
-    var distance = 10;
+    var distance = -200;
     var time = 250;
     var hideDelay = 500;
 

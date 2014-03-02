@@ -50,6 +50,8 @@ $(document).ready(function() {
 		saveCanvas(oCanvas);
 	});
 
+	//COMPUTER FUNCTIONALITY
+
 	$('#canvas').mousedown(function(e){
 		var mouseX = e.pageX - this.offsetLeft;
 		var mouseY = e.pageY - this.offsetTop;
@@ -83,6 +85,44 @@ $(document).ready(function() {
 
 		paint = false;
 	});
+
+	//TOUCH FUNCTIONALITY
+
+	$('#canvas').touchstart(function(e){
+		var mouseX = e.pageX - this.offsetLeft;
+		var mouseY = e.pageY - this.offsetTop;
+
+		paint = true;
+		addClick(mouseX, mouseY);
+		redraw();
+		console.log("PRESSED");
+	});
+
+	$('#canvas').touchmove(function(e){
+		var mouseX = e.pageX - this.offsetLeft;
+		var mouseY = e.pageY - this.offsetTop;
+
+		if(paint){
+			addClick(mouseX, mouseY, true);
+			redraw();
+		}
+	});
+
+	$('#canvas').touchend(function(e){
+		var mouseX = e.pageX - this.offsetLeft;
+		var mouseY = e.pageY - this.offsetTop;
+
+		paint = false;
+	});
+
+	/*
+	$('#canvas').mouseleave(function(e){
+		var mouseX = e.pageX - this.offsetLeft;
+		var mouseY = e.pageY - this.offsetTop;
+
+		paint = false;
+	});
+*/
 
 	function addClick(x, y, dragging)
 	{

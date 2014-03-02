@@ -112,3 +112,5 @@ function redraw()
 		context.stroke();
 	}
 }
+
+var oCanvas = document.getElementByID("canvas");

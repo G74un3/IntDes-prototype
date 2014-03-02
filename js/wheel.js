@@ -27,3 +27,8 @@ function change_position()
 	console.log(rot);
 }
 */
+
+function add_iframe() 
+{
+	
+}

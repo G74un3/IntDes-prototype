@@ -88,6 +88,7 @@ $(document).ready(function() {
 
 	//TOUCH FUNCTIONALITY
 
+	/*
 	$('#canvas').touchstart(function(e){
 		var mouseX = e.pageX - this.offsetLeft;
 		var mouseY = e.pageY - this.offsetTop;
@@ -114,6 +115,7 @@ $(document).ready(function() {
 
 		paint = false;
 	});
+	*/
 
 	/*
 	$('#canvas').mouseleave(function(e){

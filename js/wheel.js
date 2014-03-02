@@ -3,7 +3,7 @@ var rot=0;
 function click_position()
 {
 	var interval=setInterval(function() {change_position()}, 10);
-	setTimeout(function() {window.clearInterval(interval)}, 970);
+	setTimeout(function() {window.clearInterval(interval)}, 980);
 }
 
 function change_position()

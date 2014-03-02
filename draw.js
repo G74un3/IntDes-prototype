@@ -1,4 +1,46 @@
-context = document.getElementByID('canvas').getContext("2d");
+var context = document.getElementById('canvas').getContext("2d");
+
+var color90C = "#90C";
+var colorRed = "#f00";
+var colorGreen = "#0f0";
+var colorBlue = "#00f";
+var colorBlack = "#000";
+var colorWhite = "#fff";
+
+var curColor = color90C;
+
+var curTool = "crayon";
+
+var clickX = new Array();
+var clickY = new Array();
+var clickDrag = new Array();
+var clickColor = new Array();
+var clickTool = new Array();
+var paint;
+
+$('#choose90C').click(function(){
+	curColor = color90C;
+});
+
+$('#chooseRed').click(function(){
+	curColor = colorRed;
+});
+
+$('#chooseGreen').click(function(){
+	curColor = colorGreen;
+});
+
+$('#chooseBlue').click(function(){
+	curColor = colorBlue;
+});
+
+$('#chooseBlack').click(function(){
+	curColor = colorBlack;
+});
+
+$('#chooseWhite').click(function(){
+	curColor = colorWhite;
+});
 
 $('#canvas').mousedown(function(e){
 	var mouseX = e.pageX - this.offsetLeft;
@@ -7,6 +49,7 @@ $('#canvas').mousedown(function(e){
 	paint = true;
 	addClick(mouseX, mouseY);
 	redraw();
+	console.log("PRESSED");
 });
 
 $('#canvas').mousemove(function(e){
@@ -33,23 +76,24 @@ $('#canvas').mouseleave(function(e){
 	paint = false;
 });
 
-var clickX = new Array();
-var clickY = new Array();
-var clickDrag = new Array();
-var paint;
-
 function addClick(x, y, dragging)
 {
 	clickX.push(x);
 	clickY.push(y);
 	clickDrag.push(dragging);
+	if(curTool == "eraser")
+	{
+		clickColor.push("#fff");
+	} else {
+		clickColor.push(curColor);
+	}
 }
 
 function redraw()
 {
 	context.clearRect(0, 0, context.canvas.width, context.canvas.height);
 
-	context.strokeStyle = "#90C";
+	//context.strokeStyle = "#90C";
 	context.lineJoin = "round";
 	context.lineWidth = 5;
 
@@ -64,6 +108,7 @@ function redraw()
 		}
 		context.lineTo(clickX[i], clickY[i]);
 		context.closePath();
+		context.strokeStyle = clickColor[i];
 		context.stroke();
 	}
 }

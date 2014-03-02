@@ -3,7 +3,7 @@
 $(function () {
   $('.colorbubble').each(function () {
     // options
-    var distance = -200;
+    var distance = -170;
     var time = 250;
     var hideDelay = 500;
 
@@ -30,7 +30,7 @@ $(function () {
         // reset position of popup box
         popup.css({
           top: -100,
-          left: -33,
+          left: -196,
           display: 'block' // brings the popup back in to view
         })
 

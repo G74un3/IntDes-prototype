@@ -10,16 +10,16 @@ function wheel_clicked()
 
 	switch(nav)
 	{
-	case 1:
+		case 1:
 		screen1(); 
 		break;
-	case 2:
+		case 2:
 		screen2();
 		break;
-	case 3: 
+		case 3: 
 		screen3();
 		break;
-	case 0:
+		case 0:
 		screen4();
 		break;
 	}
@@ -27,30 +27,25 @@ function wheel_clicked()
 
 function screen1()
 {
-
-
+	remove_iframe();
 }
-
 
 function screen2()
 {
-
-
+	add_iframe("s-poll.html");
 }
 
 function screen3()
 {
-
-
+	add_iframe("s-kamera.html");
 }
 
 function screen4()
 {
-
-
+	add_iframe("s-drawm.html");
 }
 
-	
+
 function click_position()
 {
 	rot += 90;

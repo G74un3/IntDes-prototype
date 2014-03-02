@@ -1,23 +1,46 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Hello World</title>
-		<script type="text/javascript" src="lib/jquery-2.1.0.min.js"></script>
-		<script type="text/javascript" src="lib/base64.js"></script>
-		<script type="text/javascript" src="lib/canvas2image.js"></script>
-		<link rel="stylesheet" type="text/css" href="style.css">
-	</head>
-	<body>
+<head>
+	<title>Hello World</title>
+	<script type="text/javascript" src="lib/jquery-2.1.0.min.js"></script>
+	<script type="text/javascript" src="lib/base64.js"></script>
+	<script type="text/javascript" src="lib/canvas2image.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 
-		<button id="choose90C" type="button">Purple</button>
-		<button id="chooseRed" type="button">Red</button>
-		<button id="chooseGreen" type="button">Green</button>
-		<button id="chooseBlue" type="button">Blue</button>
-		<button id="chooseBlack" type="button">Black</button>
-		<button id="chooseWhite" type="button">White</button>
+
+	<style type="text/css">
+
+	.colorbubble {
+		position: relative;
+	}
+
+	.popup {
+		position: absolute;
+		display: none; 
+	}
+
+	</style>
+</head>
+<body>
+
+	<button id="choose90C" type="button">Purple</button>
+	<button id="chooseRed" type="button">Red</button>
+	<button id="chooseGreen" type="button">Green</button>
+	<button id="chooseBlue" type="button">Blue</button>
+	<button id="chooseBlack" type="button">Black</button>
+	<button id="chooseWhite" type="button">White</button>
+
+	<div class="colorbubble">
+		<img class="trigger" src="images/pb-rainbow.png" />
+		<div class="popup">
+
+		<h1>TEST</h1>
+		</div>
 
 		<canvas id="canvas" width="300" height="500"></canvas>
 
 		<script type="text/javascript" src="draw.js"></script>
+			<script type="text/javascript" src="js/bubble.js"></script>
+
 	</body>
-</html>
+	</html>

@@ -1,5 +1,5 @@
 var rot=0;
-var clickCount = 0;
+var clickCount = 1;
 
 function wheel_clicked()
 {

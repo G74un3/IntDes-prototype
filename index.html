@@ -16,20 +16,54 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 
+	<!-- Draw page Rep -->
+	<script type="text/javascript" src="lib/base64.js"></script>
+	<script type="text/javascript" src="lib/canvas2image.js"></script>
+	<script type="text/javascript" src="js/draw.js"></script>
+	<script type="text/javascript" src="js/bubble.js"></script>
+
+
+
 </head>
 
 <body>
-	<div class="container-fluid">
-		<div class=".row">
-		<div class="span12">
-		</div> <!-- Span 12 -->
-		</div><!-- Row -->
 
 		<img src="images/wheel-small.gif" alt="" id="wheel" onclick="wheel_clicked()" width="200" height="200" />
-		<iframe src="s-draw.html" width="500" height="900" frameBorder="0" scrolling="no"></iframe>
+
+
+	<div class="container-fluid">
+
+
+<!-- Draw page BEGIN-->
+
+
+	<canvas id="canvas" width="480" height="800"></canvas>
+
+
+	<div class="bubblewrapper">
+		<div class="colorbubble">
+			<img class="trigger" src="images/pb-rainbow.png" height="65" width="65"/>
+			<div class="popup">
+				<img class="bucket" id="chooseBlue" src="images/pb-blue.png" width="65" height="65">
+				<img class="bucket" id="chooseGreen" src="images/pb-green.png" width="65" height="65">
+				<img class="bucket" id="chooseRed" src="images/pb-red.png" width="65" height="65">
+				<img class="bucket" id="chooseBlack" src="images/pb-black.png" width="65" height="65">
+				<img class="bucket" id="choose90C" src="images/pb-purple.png" width="65" height="65">
+				<img class="bucket" id="chooseWhite" src="images/eraser.png" width="65" height="65">
+
+			</div>
+		</div>
+	</div>
+
+	<button id="send" type="button">SEND</button>
+
+	<!-- Draw page END --> 
+
 
 	</div>
 
+
+	
 
 </body>
 

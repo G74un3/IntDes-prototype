@@ -2,6 +2,7 @@
 	position: absolute;
 	left: -100px;
 	top: -100px;
+	z-index: 150000;
 }
 
 #canvas{
@@ -38,6 +39,14 @@
 }
 
 .trigger{
+
+}
+
+#iframe{
+
+position: absolute;
+top: 0;
+left: 0;
 
 }
 

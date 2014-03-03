@@ -40,12 +40,12 @@ function screen2()
 
 function screen3()
 {
-	add_iframe("s-kamera.html");
+	add_iframe("images/s-kamera.jpg");
 }
 
 function screen4()
 {
-	add_iframe("s-drawm.html");
+	add_iframe("images/s-drawm.png");
 }
 
 

@@ -4,8 +4,8 @@ body{
 
 #wheel {
 	position: absolute;
-	left: 420px;
-	top: -100px;
+	left: 320px;
+	top: -200px;
 	z-index: 1000;
 }
 
@@ -74,6 +74,8 @@ body{
 
 .trigger{
 
+	z-index: 400;
+
 }
 
 #iframe{
@@ -86,8 +88,6 @@ body{
 }
 
 
-.bucket{
+.bucket{}
 
 
-
-}

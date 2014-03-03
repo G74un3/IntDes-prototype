@@ -23,47 +23,53 @@
 	<script type="text/javascript" src="js/bubble.js"></script>
 
 
-
 </head>
 
 <body>
+<div id="canvaswrapper">
 
-		<img src="images/wheel-small.gif" alt="" id="wheel" onclick="wheel_clicked()" width="200" height="200" />
+<div id="leftblocker">
+
+</div>
+
+	<img src="images/wheel-small.gif" alt="" id="wheel" onclick="wheel_clicked()" width="200" height="200" />
 
 
 	<div class="container-fluid">
 
 
-<!-- Draw page BEGIN-->
+		<!-- Draw page BEGIN-->
 
+		
+			<canvas id="canvas" width="500" height="700"></canvas>
 
-	<canvas id="canvas" width="480" height="800"></canvas>
+		<div class="bubblewrapper">
+			<div class="colorbubble">
+				<img class="trigger" src="images/pb-rainbow.png" height="65" width="65"/>
+				<div class="popup">
+					<img class="bucket" id="chooseBlue" src="images/pb-blue.png" width="65" height="65">
+					<img class="bucket" id="chooseGreen" src="images/pb-green.png" width="65" height="65">
+					<img class="bucket" id="chooseRed" src="images/pb-red.png" width="65" height="65">
+					<img class="bucket" id="chooseBlack" src="images/pb-black.png" width="65" height="65">
+					<img class="bucket" id="choose90C" src="images/pb-purple.png" width="65" height="65">
+					<img class="bucket" id="chooseWhite" src="images/eraser.png" width="65" height="65">
 
-
-	<div class="bubblewrapper">
-		<div class="colorbubble">
-			<img class="trigger" src="images/pb-rainbow.png" height="65" width="65"/>
-			<div class="popup">
-				<img class="bucket" id="chooseBlue" src="images/pb-blue.png" width="65" height="65">
-				<img class="bucket" id="chooseGreen" src="images/pb-green.png" width="65" height="65">
-				<img class="bucket" id="chooseRed" src="images/pb-red.png" width="65" height="65">
-				<img class="bucket" id="chooseBlack" src="images/pb-black.png" width="65" height="65">
-				<img class="bucket" id="choose90C" src="images/pb-purple.png" width="65" height="65">
-				<img class="bucket" id="chooseWhite" src="images/eraser.png" width="65" height="65">
-
+				</div>
 			</div>
 		</div>
+
+		<img id="send" class="knap" src="images/knap.png" width="200" height="72"/>
+
+		</div>
+
+
+		<!-- Draw page END --> 
+
+
 	</div>
 
-	<button id="send" type="button">SEND</button>
-
-	<!-- Draw page END --> 
 
 
-	</div>
-
-
-	
 
 </body>
 

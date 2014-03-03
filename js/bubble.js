@@ -1,4 +1,7 @@
 // The following is originally written by Remy Sharp the original can be found here:http://jqueryfordesigners.com/coda-popup-bubbles.1.html
+//Modified by Daniel Graungaard d 02/03-14
+
+
 
 $(function () {
   $('.colorbubble').each(function () {
@@ -62,5 +65,30 @@ $(function () {
         });
       }, hideDelay);
     });
+
+
+    $(".popup").click(function(){
+
+      fade_bubble();
+
+    });
+
+
+    function fade_bubble(){
+
+      hideDelayTimer = null;
+      popup.animate({
+        top: '-=' + distance + 'px',
+        opacity: 0
+      }, time, 'swing', function () {
+              // once the animate is complete, set the tracker variables
+              shown = false;
+              // hide the popup entirely after the effect (opacity alone doesn't do the job)
+              popup.css('display', 'none');
+            });
+
+    }
+
   });
 });
+

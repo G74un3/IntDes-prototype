@@ -59,7 +59,7 @@ function click_position()
 function add_iframe(src)
 {
 	$('#iframe').remove();
-	$('.container-fluid').append('<iframe id="iframe" src="'+src+'" width="500" height="900" frameBorder="0" scrolling="no"></iframe>');
+	$('#canvaswrapper').append('<iframe id="iframe" src="'+src+'" width="500" height="700" frameBorder="0" scrolling="no"></iframe>');
 }
 
 function remove_iframe()

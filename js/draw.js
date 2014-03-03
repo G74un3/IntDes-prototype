@@ -1,54 +1,53 @@
-$(document).ready(function() {
-
-	var context = document.getElementById('canvas').getContext("2d");
-
-	var color90C = "#90C";
-	var colorRed = "#f00";
-	var colorGreen = "#0f0";
-	var colorBlue = "#00f";
-	var colorBlack = "#000";
-	var colorWhite = "#fff";
-
-	var curColor = color90C;
-
-	var curTool = "crayon";
-
 	var clickX = new Array();
 	var clickY = new Array();
 	var clickDrag = new Array();
 	var clickColor = new Array();
-	var clickTool = new Array();
-	var paint;
 	
-	var oCanvas = document.getElementById("canvas");
+	$(document).ready(function() {
 
-	$('#choose90C').click(function(){
-		curColor = color90C;
-	});
 
-	$('#chooseRed').click(function(){
-		curColor = colorRed;
-	});
+		var color90C = "#90C";
+		var colorRed = "#f00";
+		var colorGreen = "#0f0";
+		var colorBlue = "#00f";
+		var colorBlack = "#000";
+		var colorWhite = "#fff";
 
-	$('#chooseGreen').click(function(){
-		curColor = colorGreen;
-	});
+		var curColor = color90C;
 
-	$('#chooseBlue').click(function(){
-		curColor = colorBlue;
-	});
+		var curTool = "crayon";
 
-	$('#chooseBlack').click(function(){
-		curColor = colorBlack;
-	});
+		var paint;
 
-	$('#chooseWhite').click(function(){
-		curColor = colorWhite;
-	});
+		var oCanvas = document.getElementById("canvas");
 
-	$('#send').click(function(){
-		saveCanvas(oCanvas);
-	});
+		$('#choose90C').click(function(){
+			curColor = color90C;
+		});
+
+		$('#chooseRed').click(function(){
+			curColor = colorRed;
+		});
+
+		$('#chooseGreen').click(function(){
+			curColor = colorGreen;
+		});
+
+		$('#chooseBlue').click(function(){
+			curColor = colorBlue;
+		});
+
+		$('#chooseBlack').click(function(){
+			curColor = colorBlack;
+		});
+
+		$('#chooseWhite').click(function(){
+			curColor = colorWhite;
+		});
+
+		$('#send').click(function(){
+			saveCanvas(oCanvas);
+		});
 
 	//COMPUTER FUNCTIONALITY
 
@@ -124,7 +123,7 @@ $(document).ready(function() {
 
 		paint = false;
 	});
-*/
+	*/
 
 	function addClick(x, y, dragging)
 	{
@@ -141,6 +140,9 @@ $(document).ready(function() {
 
 	function redraw()
 	{
+
+		var context = document.getElementById('canvas').getContext("2d");
+
 		context.clearRect(0, 0, context.canvas.width, context.canvas.height);
 
 		//context.strokeStyle = "#90C";
@@ -169,14 +171,7 @@ $(document).ready(function() {
 		}
 	}
 
-	function clear()
-	{
-		clickX = new Array();
-		clickY = new Array();
-		clickDrag = new Array();
-		clickColor = new Array();
-	}
-
+	
 
 	function saveCanvas(pCanvas)
 	{
@@ -185,7 +180,52 @@ $(document).ready(function() {
 
 		if(!bRes)
 		{
-			alert("Sorry, you cannot download");
+			alert("Der skete en fejl og vi kan ikke sende dit billede til bibliotekets væg. Ups...");
 		}
 	}
 });
+
+
+function clear_canvas()
+	{
+		clickX = new Array();
+		clickY = new Array();
+		clickDrag = new Array();
+		clickColor = new Array();
+		redraw();
+	}
+
+
+
+	function redraw()
+	{
+
+		var context = document.getElementById('canvas').getContext("2d");
+
+		context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+
+		//context.strokeStyle = "#90C";
+		context.lineJoin = "round";
+		//context.lineWidth = 5;
+
+		for(var i = 0; i < clickX.length; i++)
+		{
+			context.beginPath();
+			if(clickDrag[i] && i)
+			{
+				context.moveTo(clickX[i-1], clickY[i-1]);
+			} else {
+				context.moveTo(clickX[i]-1, clickY[i]);
+			}
+			context.lineTo(clickX[i], clickY[i]);
+			context.closePath();
+			if(clickColor[i] == colorWhite)
+			{
+				context.lineWidth = 20;
+			} else {
+				context.lineWidth = 5;
+			}
+			context.strokeStyle = clickColor[i];
+			context.stroke();
+		}
+	}

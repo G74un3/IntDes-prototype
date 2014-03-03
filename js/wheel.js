@@ -28,11 +28,14 @@ function wheel_clicked()
 function screen1()
 {
 	remove_iframe();
+
 }
 
 function screen2()
 {
 	add_iframe("s-poll.html");
+	clear_canvas();
+	
 }
 
 function screen3()

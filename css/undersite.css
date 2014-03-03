@@ -1,0 +1,22 @@
+
+
+body{
+
+	background-color: #fff;
+
+}
+.answer{ 
+
+	width: 250px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+
+#question{
+
+	width: 250px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}

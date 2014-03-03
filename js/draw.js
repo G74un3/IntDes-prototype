@@ -169,6 +169,14 @@ $(document).ready(function() {
 		}
 	}
 
+	function clear()
+	{
+		clickX = new Array();
+		clickY = new Array();
+		clickDrag = new Array();
+		clickColor = new Array();
+	}
+
 
 	function saveCanvas(pCanvas)
 	{

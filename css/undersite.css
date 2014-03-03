@@ -7,16 +7,46 @@ body{
 }
 .answer{ 
 
-	width: 250px;
-	margin-right: auto;
-	margin-left: auto;
-	text-align: center;
+	border-style: dashed;
 }
 
 #question{
 
-	width: 250px;
+	border-style: solid;
+}
+
+.field{
+
+
+	width: 350px;
 	margin-right: auto;
 	margin-left: auto;
-	text-align: center;
+	padding-left: 5px;
+	display: block;
+	height: 30px;
+	margin-top: 10px;
+	font: 1em Arial, Helvetica;
+
+}
+
+#pollwrapper{
+
+	margin-top: 200px;
+	
+}
+
+.polllabel{
+
+	display: block;
+	margin-left: 200px;
+
+}
+
+.knap{
+
+	position: absolute;
+	top: 620px;
+	left: 28.6%;
+	z-index: 250;
+
 }

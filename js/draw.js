@@ -143,7 +143,10 @@
 
 		var context = document.getElementById('canvas').getContext("2d");
 
-		context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+		//context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+		
+		context.fillStyle="white";
+		context.fillRect(0, 0, context.canvas.width, context.canvas.height);
 
 		//context.strokeStyle = "#90C";
 		context.lineJoin = "round";

@@ -1,4 +1,4 @@
-	var started = true;
+//var started = true;
 
 	var clickX = new Array();
 	var clickY = new Array();
@@ -3089,6 +3089,7 @@ function intdraw(i)
 		clickY = new Array();
 		clickDrag = new Array();
 		clickColor = new Array();
+		redraw();
 	}
 }
 	

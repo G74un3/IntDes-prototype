@@ -23,6 +23,7 @@ function wheel_clicked()
 		screen4();
 		break;
 	}
+	started = false;
 }
 
 function screen1()

@@ -63,10 +63,12 @@ function click_position()
 function add_iframe(src)
 {
 	$('#iframe').remove();
-	$('#canvaswrapper').append('<iframe id="iframe" src="'+src+'" width="500" height="700" frameBorder="0" scrolling="no"></iframe>');
+	$('#canvaswrapper').append('<iframe id="iframe" src="'+src+'" width="500" height="700" frameborder="0" scrolling="no"></iframe>');
+	console.log("added iframe");
 }
 
 function remove_iframe()
 {
 	$('#iframe').remove();
+	console.log("removed iframe");
 }

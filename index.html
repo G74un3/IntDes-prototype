@@ -9,7 +9,20 @@
 	<link rel="stylesheet" type="text/css" media="all" href="lib/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" media="all" href="lib/bootstrap/css/bootstrap-responsive.min.css">
 	<script type="text/javascript">
-var started = true;
+	
+	var started = true;
+
+	function fuckingShitJustAnimateThisFuckingGIF(){
+
+
+		add_iframe("sending.html");
+
+		//$('body').prepend('<img id="sendanimation" src="images/sending.gif" width="200" height="227" alt=""/>');
+		window.setTimeout(function(){remove_iframe();}, 5000);
+		clear_canvas();
+
+	}
+
 	</script>
 	<script type="text/javascript" src="lib/jquery-2.1.0.min.js"></script>
 	<script type="text/javascript" language="javascript" charset="utf-8" src="lib/bootstrap/js/bootstrap.min.js"></script>
@@ -29,39 +42,39 @@ var started = true;
 </head>
 
 <body>
-<div id="canvaswrapper">
+	<div id="canvaswrapper">
 
-<div id="leftblocker">
+		<div id="leftblocker">
 
-</div>
-
-	<img src="images/wheel-small.gif" alt="" id="wheel" onclick="wheel_clicked()" width="400" height="400" />
-
-
-	<div class="container-fluid">
-
-
-		<!-- Draw page BEGIN-->
-
-		
-			<canvas id="canvas" width="500" height="700"></canvas>
-
-		<div class="bubblewrapper">
-			<div class="colorbubble">
-				<img class="trigger" src="images/pb-rainbow.png" height="65" width="65"/>
-				<div class="popup">
-					<img class="bucket" id="chooseBlue" src="images/pb-blue.png" width="65" height="65">
-					<img class="bucket" id="chooseGreen" src="images/pb-green.png" width="65" height="65">
-					<img class="bucket" id="chooseRed" src="images/pb-red.png" width="65" height="65">
-					<img class="bucket" id="chooseBlack" src="images/pb-black.png" width="65" height="65">
-					<img class="bucket" id="choose90C" src="images/pb-purple.png" width="65" height="65">
-					<img class="bucket" id="chooseWhite" src="images/eraser.png" width="65" height="65">
-
-				</div>
-			</div>
 		</div>
 
-		<img id="send" class="knap" src="images/knap.png" width="200" height="72"/>
+		<img src="images/wheel-small.gif" alt="" id="wheel" onclick="wheel_clicked()" width="400" height="400" />
+
+
+		<div class="container-fluid">
+
+
+			<!-- Draw page BEGIN-->
+
+
+			<canvas id="canvas" width="500" height="700"></canvas>
+
+			<div class="bubblewrapper">
+				<div class="colorbubble">
+					<img class="trigger" src="images/pb-rainbow.png" height="65" width="65"/>
+					<div class="popup">
+						<img class="bucket" id="chooseBlue" src="images/pb-blue.png" width="65" height="65">
+						<img class="bucket" id="chooseGreen" src="images/pb-green.png" width="65" height="65">
+						<img class="bucket" id="chooseRed" src="images/pb-red.png" width="65" height="65">
+						<img class="bucket" id="chooseBlack" src="images/pb-black.png" width="65" height="65">
+						<img class="bucket" id="choose90C" src="images/pb-purple.png" width="65" height="65">
+						<img class="bucket" id="chooseWhite" src="images/eraser.png" width="65" height="65">
+
+					</div>
+				</div>
+			</div>
+
+			<img id="send" class="knap" src="images/knap.png" width="200" height="72"/>
 
 		</div>
 

@@ -3140,8 +3140,8 @@ function intdraw(i)
 
 		$('#send').click(function(){
 			saveCanvas(oCanvas);
-			add_iframe("images/sending.gif");
-			window.setTimeout(function(){remove_iframe();}, 5000);
+			setTimeout(function() { fuckingShitJustAnimateThisFuckingGIF(); }, 500);
+			
 		});
 
 	//COMPUTER FUNCTIONALITY
